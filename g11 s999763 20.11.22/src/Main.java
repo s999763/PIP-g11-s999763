@@ -50,9 +50,35 @@ public class Main {
         //======KONIEC ZADANIA 4========
 
         //======ZADANIE 5=======
-        
+
 
         //======KONIEC ZADANIA 5========
+        //======ZADANIE 6=======
+        System.out.println("Wprowadź 2 liczby rzeczywiste i naciśnij ENTER po każdej z nich:");
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        if (a>b){
+            int temp = a;
+            a = b;
+            b = temp;)}
+        System.out.println("Wybrany przedział: ["+ a + ", " + b + "]");
+        int d1;
+        int d2;
+        int d3;
+        
+        System.out.println("wartości generowane losowo:" + d1 + " " + "d2" + "d3");
+        
+        //jak ustawić liczby w kolejności
+        
+        System.out.println("Gdzie: ");
+
+
+
+        //======KONIEC ZADANIA 6========
+        //======ZADANIE 8=======
+
+
+        //======KONIEC ZADANIA 8========
     }
 
     //public static int absoluteValue(()){
