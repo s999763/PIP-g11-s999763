@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -20,68 +21,63 @@ public class Main {
             System.out.println("Pochmurno");
         }
         //======KONIEC ZADANIA 1======
-
-        // ======= ZADANIE 4 =======
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Podaj pierwszą liczbę");
-        int pierwszaLiczba = Integer.parseInt(scan.nextLine());
-        System.out.println("Podaj drugą liczbę");
-        int drugaLiczba = Integer.parseInt(scan.nextLine());
-        System.out.println("Podaj typ działania:");
-        String dzialanie = scan.nextLine();
-
-        switch(dzialanie) {
-            case "ADD":
-                System.out.println("Wynik: " + (pierwszaLiczba + drugaLiczba));
-                break;
-            case  "SUB":
-                System.out.println("Wynik: " + (pierwszaLiczba - drugaLiczba));
-                break;
-            case "DIV":
-                System.out.println("Wynik: " + (pierwszaLiczba / drugaLiczba));
-                break;
-            case "MUL":
-                System.out.println("Wynik: " + (pierwszaLiczba * drugaLiczba));
-                break;
-            default:
-                System.out.println("Brak takiej operacji");
-                            }
-
-        //======KONIEC ZADANIA 4========
-
-        //======ZADANIE 5=======
-
-
-        //======KONIEC ZADANIA 5========
+        
         //======ZADANIE 6=======
+        Scanner scan = new Scanner(System.in);
         System.out.println("Wprowadź 2 liczby rzeczywiste i naciśnij ENTER po każdej z nich:");
-        int a = scan.nextInt();
-        int b = scan.nextInt();
+        float a = scan.nextFloat();
+        float b = scan.nextFloat();
         if (a>b){
-            int temp = a;
+            float temp = a;
             a = b;
-            b = temp;)}
+            b = temp;}
         System.out.println("Wybrany przedział: ["+ a + ", " + b + "]");
-        int d1;
-        int d2;
-        int d3;
-        
-        System.out.println("wartości generowane losowo:" + d1 + " " + "d2" + "d3");
-        
+        Random r = new Random();
+        float d1 = r.nextFloat(b-a+1)+a;
+        float d2 = r.nextFloat(b-a+1)+a;
+        float d3 = r.nextFloat(b-a+1)+a;
+
+        System.out.println("wartości generowane losowo:" + d1 + "; " + d2 + "; " + d3);
+
         //jak ustawić liczby w kolejności
-        
-        System.out.println("Gdzie: ");
+        if (d1<d2 && d1<d3 && d2<d3){
 
-
-
+        System.out.println("Gdzie: "+d1+"<"+d2+"<"+d3);}
+        else if (d1<d2 && d1<d3 && d3<d2) {
+            System.out.println("Gdzie: "+d1+"<"+d3+"<"+d2);}
+        else if (d1>d2 && d1<d3 && d2<d3) {
+            System.out.println("Gdzie: "+d2+"<"+d1+"<"+d3);}
+        else if (d3<d1 && d3<d2 && d1<d2){
+            System.out.println("Gdzie: "+d3+"<"+d1+"<"+d2);}
+        else if (d2<d3 && d2<d1 && d3<d1){
+            System.out.println("Gdzie: "+d2+"<"+d3+"<"+d1);}
+        else if (d3<d2 && d3<d1 && d2<d1){
+            System.out.println("Gdzie: "+d3+"<"+d2+"<"+d1);}
         //======KONIEC ZADANIA 6========
         //======ZADANIE 8=======
-
+        System.out.println("Witamy, wybierz walutę: 1 - PLN; 2 - JPY");
+        int waluta= scan.nextInt();
+        System.out.println("Wprowadź kwotę:");
+        int kwota = scan.nextInt();
+        if (waluta==1){
+            System.out.println(kwota + "zł => "+ kwota*30.29 + "¥");
+        }
+        else if (waluta==2){
+            System.out.println(kwota + "¥ => " + kwota*0.03 + "zł");
+        }
+        else {
+            System.out.println("Nieprawidłowa wartość, rozpocznij ponownie");
+        }
 
         //======KONIEC ZADANIA 8========
-    }
-
-    //public static int absoluteValue(()){
-            //if
         }
+
+
 }
+
+
+
+
+
+
+
