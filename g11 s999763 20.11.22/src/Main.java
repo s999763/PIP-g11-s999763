@@ -21,9 +21,42 @@ public class Main {
             System.out.println("Pochmurno");
         }
         //======KONIEC ZADANIA 1======
-        
-        //======ZADANIE 6=======
+
+        // ======= ZADANIE 4, 5 =======
         Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj pierwszą liczbę");
+        int pierwszaLiczba = Integer.parseInt(scan.nextLine());
+        System.out.println("Podaj drugą liczbę");
+        int drugaLiczba = Integer.parseInt(scan.nextLine());
+        System.out.println("Podaj typ działania:");
+        String dzialanie = scan.nextLine();
+
+        switch(dzialanie) {
+            case "ADD":
+                int addResult = pierwszaLiczba+drugaLiczba;
+                System.out.println("Wynik: " + absoluteValue(addResult));
+                break;
+            case  "SUB":
+                int subResult = pierwszaLiczba-drugaLiczba;
+                System.out.println("Wynik: " + absoluteValue(subResult));
+                break;
+            case "DIV":
+                int divResult =  pierwszaLiczba / drugaLiczba;
+                System.out.println("Wynik: " + absoluteValue(divResult));
+                break;
+            case "MUL":
+                int mulResult = pierwszaLiczba * drugaLiczba;
+                System.out.println("Wynik: " + (pierwszaLiczba * drugaLiczba));
+                break;
+            default:
+                System.out.println("Brak takiej operacji");
+        }
+
+        //======KONIEC ZADANIA 4,5========
+
+
+
+        //======ZADANIE 6=======
         System.out.println("Wprowadź 2 liczby rzeczywiste i naciśnij ENTER po każdej z nich:");
         float a = scan.nextFloat();
         float b = scan.nextFloat();
@@ -73,11 +106,10 @@ public class Main {
         }
 
 
+    //metoda licząca wartość bezwzględną
+    public static int absoluteValue(int k) {
+        if (k>=0){
+        return k;}
+        else {return (-k);}
+    }
 }
-
-
-
-
-
-
-
