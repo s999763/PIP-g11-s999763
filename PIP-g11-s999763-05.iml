@@ -1,11 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Zadanie 1
+        System.out.println("Podaj liczbe n");
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        wyswietlLiczbyOdZeroDoN(n);
+
+        //Zadanie 2
+        System.out.println("Podaj numer wyrazu ciągu");
+        int numerWyrazu = scan.nextInt();
+
+        System.out.println(numerWyrazu + " wyraz ciągu Fibonacciego to: " +  obliczWyrazFibonacciego(numerWyrazu));
+
+        //Zadanie 3
+        int m = 5;
+        for (int i = 0; i < 5; i++) {
+            if ((m - i) % 2 != 0) {
+                for (int j = 0; j < 5 - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int k = 0; k <= i; k++) {
+                    System.out.print("* ");
+                }
+                System.out.println();
+            }
+        }
+        //Zadanie 4
+        int x = 5;
+        int y = 3;
+        int z = 8;
+
+        for (int q=z; q>0; q--){
+        if (q<=y && q <= y && q<=z){
+            System.out.println("* * *");
+        }
+        else if (q<=x && q<=z && q>y) {System.out.println("*   *");}
+        else System.out.println("    *");
+        }
+        }
+
+    //Zadanie 1
+    public static void wyswietlLiczbyOdZeroDoN(int n) {
+        if (n >= 0) {
+            for (int i = 0; i <= n; i++) {
+                System.out.print(i + " ");
+            }
+        } else {
+            for (int i = 0; i >= n; i--) {
+                System.out.print(i + " ");
+            }
+            return;
+        }
+    }
+//Zadanie 2
+    public static int obliczWyrazFibonacciego(int w) {
+        if (w == 0) {
+            System.out.println("0 wyraz to 0");
+        } else {
+            int i = 0;
+            int temporary = 0;
+            int a = 1;
+            int b = 1;
+            while (i < (w - 1)) {
+                temporary = a;
+                a = b;
+                b += temporary;
+                i++;
+
+            }
+            return a;
+        }
+        return w;
+    }
+}
