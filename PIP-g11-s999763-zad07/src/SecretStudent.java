@@ -8,29 +8,38 @@ public class SecretStudent {
     public String getName(){
         return name;
     }
-    public void setName(String newName){
+    public String setName(String newName){
         if (newName.equals(" ") || newName.equals("")){
-            return;
+            return newName;
         }
         name = newName;
 
+        return newName;
     }
     public String getLastName(){
         return lastName;
+    }
+    public String setLastName(String newLastName){lastName = newLastName;
+        return newLastName;
     }
 
     public int getNumber(){
         return number;
     }
+    public int setNumber(int newNumber){number = newNumber;
+        return newNumber;
+    }
 
-    public void readFromScanner(){
+
+    public SecretStudent readFromScanner(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Input first name");
-        name = scan.nextLine();
+        this.name = setName(scan.nextLine());
         System.out.println("Input last name");
-        lastName = scan.nextLine();
+        this.lastName = setLastName(scan.nextLine());
         System.out.println("Input student number");
-        number = scan.nextInt();
+        this.number = setNumber(scan.nextInt());
+        return new SecretStudent();
 
     }
 
