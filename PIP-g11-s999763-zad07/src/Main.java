@@ -16,15 +16,17 @@ public class Main {
         secretStudent1.setName("Jan");
         System.out.println(secretStudent1.getName());
 
+        SecretStudent[] secretStudents = new SecretStudent[2];
         SecretStudent secretStudent2 = new SecretStudent();
-        secretStudent2.readFromScanner();
         SecretStudent secretStudent3 = new SecretStudent();
-        secretStudent3.readFromScanner();
+        
+        secretStudents[0] = secretStudent2.readFromScanner();
+        secretStudents[1] = secretStudent3.readFromScanner();
 
-        secretStudent2.print();
-        secretStudent3.print();
 
-        //jak zapisac zmienne osobno?
+        for (int i =0; i <secretStudents.length; i++){
+            System.out.println(secretStudents[i].getName() + " " + secretStudents[i].getLastName() + " " + secretStudents[i].getNumber());
+        }
 
     }
 }
